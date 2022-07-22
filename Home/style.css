@@ -8,8 +8,8 @@ header{
     /* background: linear-gradient(45deg, #ec7a7a 10%, #f53939 80%); */
     background-attachment: fixed;
     height: 600px;
-    margin:0;
-    padding: 0;
+    border-bottom-left-radius: 10%;
+    border-bottom-right-radius: 10%;
 }
 
 @font-face {
