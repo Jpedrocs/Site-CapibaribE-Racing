@@ -1,0 +1,48 @@
+body{
+    margin: 0;
+}
+
+header{
+    background: rgb(241,69,69);
+    background: linear-gradient(28deg, rgba(241,69,69,1) 0%, rgba(175,64,64,1) 95%);
+    /* background: linear-gradient(45deg, #ec7a7a 10%, #f53939 80%); */
+    background-attachment: fixed;
+    height: 600px;
+    margin:0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: "Astera";
+    src: url('/Assets/Fontes/ASTERA v2.ttf') format('truetype');
+    font-weight: normal;
+    font-style:normal;
+}
+
+.header-logo{
+    float: left;
+    width: 220px;
+    vertical-align: top;
+    margin-left: 3%;
+    margin-top: 1%;
+}
+
+ul{
+    display: inline-flex;
+    margin-left: 4%; 
+    font-family: "Astera";
+    font-size: 14px;
+    color: rgb(233, 233, 233);
+    list-style-type: none;
+}
+
+li{
+    padding: 10px;
+    margin-left: 70px;
+}
+
+li:hover{
+    transform: scale(1.05);
+    transition-duration: 100ms;
+}
+
