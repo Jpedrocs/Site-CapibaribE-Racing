@@ -1,22 +1,37 @@
-body{
-    margin: 0;
-}
-
-header{
-    background: rgb(241,69,69);
-    background: linear-gradient(28deg, rgba(241,69,69,1) 0%, rgba(175,64,64,1) 95%);
-    /* background: linear-gradient(45deg, #ec7a7a 10%, #f53939 80%); */
-    background-attachment: fixed;
-    height: 600px;
-    border-bottom-left-radius: 10%;
-    border-bottom-right-radius: 10%;
-}
-
 @font-face {
     font-family: "Astera";
     src: url('/Assets/Fontes/ASTERA v2.ttf') format('truetype');
     font-weight: normal;
     font-style:normal;
+}
+@font-face {
+    font-family: "Trap";
+    src: url('/Assets/Fontes/Trap-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: "Edensor";
+    src: url('/Assets/Fontes/Edensor-Free.otf') format('opentype');
+}
+
+:root{
+    --img-size: 500px;
+    --logo-size: 220px;
+}
+
+
+body{
+    margin: 0;
+}
+
+header{
+    background: rgb(143, 35, 35);
+    /* background: rgb(255, 12, 12); */
+    /* background: linear-gradient(28deg, rgba(241,69,69,1) 0%, rgba(175,64,64,1) 95%); */
+    background-attachment: fixed;
+    height: 70px;
+    /* border-bottom-left-radius: 10%; */
+    /* border-bottom-right-radius: 10%; */
 }
 
 .header-logo{
@@ -24,25 +39,72 @@ header{
     width: 220px;
     vertical-align: top;
     margin-left: 3%;
-    margin-top: 1%;
+    margin-top:1%;
 }
 
 ul{
+    margin-top: 2%;
     display: inline-flex;
-    margin-left: 4%; 
-    font-family: "Astera";
-    font-size: 14px;
-    color: rgb(233, 233, 233);
+    margin-left: 2%; 
     list-style-type: none;
 }
 
-li{
-    padding: 10px;
-    margin-left: 70px;
+a{
+    text-decoration: none;
+    color: rgba(231, 229, 229, 0.753);
+    font-family: "Trap";
+    font-size: 16px;
+
 }
 
-li:hover{
-    transform: scale(1.05);
-    transition-duration: 100ms;
+li{
+    margin-left: 60px;
 }
+
+a:hover{
+    color:rgb(240, 235, 235);
+    transition: 300ms;
+}
+
+
+/* PAINEL DO CARRO */
+#car-img-div{
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    float: right;
+    margin-top: 100px;
+    margin-right: 100px;
+    background: rgba(175,64,64,1);
+    background: linear-gradient(28deg, rgb(150, 44, 44) 5%, rgb(177, 76, 76) 60%);
+    width: var(--img-size);
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+
+/* IMAGEM DO CARRO */
+#car-img{
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    width: var(--img-size);
+}
+
+
+
+/* TEXTO DO CARRO */
+#car-img-div p{
+    color: rgb(218, 216, 216);
+    font-size: 18px;
+    font-family: "Trap";
+    padding: 25px;
+}
+#car-img-div h2{
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-family: "Trap";
+}
+
+
+
+
 
