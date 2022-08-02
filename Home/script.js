@@ -1,1 +1,1 @@
-console.log('Hello')
+console.log(window.visualViewport.width)
