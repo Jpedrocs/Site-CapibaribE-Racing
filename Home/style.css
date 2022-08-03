@@ -70,21 +70,38 @@ nav a:hover{
 
 .sec-main{
     display: grid;
-    grid-template-columns: auto auto;
+    /* grid-template-columns: auto auto; */
+    grid-template-areas: "title title container"
+                         "text  text container"  
+                         ;
+    /* justify-content: space-around; */
+    justify-items: flex-end;
     
 }
 
-.sec-main h2{
-    /* grid-area: main_title; */
+.sec-main p{
+    font-family: 'Trap';
+    font-size: 20px;
+    color:dimgrey;
+}
+
+
+/* Titulo da Main */
+#main-title{
     color: rgb(143, 35, 35);
     font-family: 'Trap';
     font-weight: bold;
     font-size: clamp(35px, 40px, 45px);
+    margin-top: 20px;
+}
+
+#main-container{
+    margin-left: 20px;
 }
 
 /* PAINEL DO CARRO */
 #car-container{
-    /* grid-area: car_container; */
+    grid-area: container;
     margin: 50px;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
@@ -108,6 +125,7 @@ nav a:hover{
 
 /* TITULO DO CARRO */
 #car-container h2{
+    margin-top: 5px;
     text-align: center;
     color: rgb(255, 255, 255);
     font-family: "Trap";
@@ -125,6 +143,30 @@ nav a:hover{
 }
 
 /* Patrocinadores */
+@keyframes linha{
+    from{
+        width:0;
+        border-bottom: 3px solid black;
+    }
+    to{
+        width: 236px;
+        border-bottom: 3px solid black;
+    }
+}
+
+.sponsors h2{
+    text-align: center;
+    color: rgb(240, 228, 228);
+    font-family: "Trap";
+    font-weight: 600;
+    font-size: 32px;
+    grid-area: a1;
+}
+
+.sponsors h2:hover{
+    animation-name: linha;
+    animation-duration: 1s;
+}
 
 #sponsor-img-1{
     width: 170px;
@@ -140,14 +182,6 @@ nav a:hover{
 #sponsor-img-3{
     width: 220px;
     grid-area: a4;
-}
-
-.sponsors h2{
-    color: rgb(240, 228, 228);
-    font-family: "Trap";
-    font-weight: 600;
-    font-size: 32px;
-    grid-area: a1;
 }
 
 .sponsors{
@@ -166,7 +200,6 @@ nav a:hover{
     justify-items: center;
 
     /* Sombras */
-
     -webkit-box-shadow: 0px 3px 50px 0px rgba(0,0,0,0.6); 
     box-shadow: 0px 3px 50px 0px rgba(0,0,0,0.6);
 }
@@ -178,14 +211,41 @@ nav a:hover{
         grid-template-rows: auto;
     }
 
-    nav ul{
-        display: none;
+    #menu{
+        display: block;
+        position: absolute;
+        right: 0;
+        border-bottom-left-radius: 10px;
+        padding: 10px;
+        background-color: rgba(175,64,64,1);
+        -webkit-box-shadow: -7px 8px 20px -9px rgba(0,0,0,0.59); 
+        box-shadow: -7px 8px 20px -9px rgba(0,0,0,0.59);
     }
+    .header-home a{
+        padding: 20px;
+    }
+
+    .hide{
+        top: -500px;
+        transition: 500ms;
+    }
+    .show{
+        top: 70px;
+        height: fit-content;
+        transition: 500ms;
+    }
+
+
 
     .sec-main{
         grid-template-columns: auto;
+        grid-template-areas: "title" "text" "container";
         justify-items: center;
+        text-align: center;
+    }
 
+    #title-style{
+        margin: auto;
     }
 
     #car-container{
