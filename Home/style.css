@@ -1,3 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --img-size: 500px;
+    --logo-size: 220px;
+}
+
 @font-face {
     font-family: "Astera";
     src: url('/Assets/Fontes/ASTERA v2.ttf') format('truetype');
@@ -14,22 +24,12 @@
     src: url('/Assets/Fontes/Edensor-Free.otf') format('opentype');
 }
 
-:root{
-    --img-size: 500px;
-    --logo-size: 220px;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-}
-
-header{
+/* Navigation bar */
+nav{
     background: rgb(143, 35, 35);
     background-attachment: fixed;
     background-size: cover;
     height: 70px;
-
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -38,49 +38,77 @@ header{
     box-shadow: -1px -15px 21px 9px rgba(0,0,0,0.53);
 }
 
+.material-icons{
+    display: none;
+}
+
 .header-logo{
     width: 300px;
 }
 
-ul{
+nav ul{
     display: flex;
     gap: 25px;
     list-style-type: none;
 }
 
-a{
+nav a{
     text-decoration: none;
     color: rgba(231, 229, 229, 0.753);
     font-family: "Trap";
     font-size: clamp(18px, 2vw, 18px);
 
 }
-a:hover{
+nav a:hover{
     color:rgb(240, 235, 235);
     transition: 300ms;
 }
 
+
+
 /* MAIN */
-main{
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    align-items: end;
+
+.sec-main{
+    display: grid;
+    /* grid-template-columns: auto auto; */
+    grid-template-areas: "title title container"
+                         "text  text container"  
+                         ;
+    /* justify-content: space-around; */
+    justify-items: flex-end;
+    
+}
+
+.sec-main p{
+    font-family: 'Trap';
+    font-size: 20px;
+    color:dimgrey;
 }
 
 
+/* Titulo da Main */
+#main-title{
+    color: rgb(143, 35, 35);
+    font-family: 'Trap';
+    font-weight: bold;
+    font-size: clamp(35px, 40px, 45px);
+    margin-top: 40px;
+}
+
+#main-container{
+    margin-left: 20px;
+}
+
 /* PAINEL DO CARRO */
-#car-img-div{
+#car-container{
+    grid-area: container;
     margin: 50px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
     background: rgba(175,64,64,1);
     background: linear-gradient(28deg, rgb(150, 44, 44) 5%, rgb(177, 76, 76) 60%);
     width: 350px;
-    min-width: 300px;
+    min-width: 200px;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
     -webkit-box-shadow: 7px 6px 32px 9px rgba(0,0,0,0.38); 
@@ -96,15 +124,16 @@ main{
 }
 
 /* TITULO DO CARRO */
-#car-img-div h2{
-    margin-top: 2%;
+#car-container h2{
+    margin-top: 5px;
+    text-align: center;
     color: rgb(255, 255, 255);
     font-family: "Trap";
     font-size: clamp(22px, 2vw, 24px);
 }
 
 /* TEXTO DO CARRO */
-#car-img-div p{
+#car-container p{
     color: rgb(218, 216, 216);
     font-size: clamp(18px, 1.3vw, 22px);
     font-family: "Trap";
@@ -113,9 +142,127 @@ main{
     margin-top: 2%;
 }
 
+/* Patrocinadores */
+@keyframes linha{
+    from{
+        width:0;
+        border-bottom: 3px solid black;
+    }
+    to{
+        width: 236px;
+        border-bottom: 3px solid black;
+    }
+}
 
-.mid-bar{
-    height: 600px;
-    width: 100%;
+.sponsors h2{
+    text-align: center;
+    color: rgb(240, 228, 228);
+    font-family: "Trap";
+    font-weight: 600;
+    font-size: 32px;
+    grid-area: a1;
+}
+
+.sponsors h2:hover{
+    animation-name: linha;
+    animation-duration: 1s;
+}
+
+#sponsor-img-1{
+    width: 170px;
+    grid-area: a2;
+}
+
+#sponsor-img-2{
+    width: 240px;
+    margin-left: 10px;
+    grid-area: a3;
+}
+
+#sponsor-img-3{
+    width: 220px;
+    grid-area: a4;
+}
+
+.sponsors{
+    display: grid;
     background: rgb(143, 35, 35);
+    width: 100%;
+    padding-bottom: 100px;
+    padding-top: 70px;
+    grid-template-areas: "a1 a1 a1"
+                         "a2 a3 a4"
+    ;
+    grid-template-columns: auto auto auto;    
+    grid-template-rows: auto auto;
+    row-gap: 60px;
+    align-items: center;
+    justify-items: center;
+
+    /* Sombras */
+    -webkit-box-shadow: 0px 3px 50px 0px rgba(0,0,0,0.6); 
+    box-shadow: 0px 3px 50px 0px rgba(0,0,0,0.6);
+}
+
+@media only screen and (max-width: 895px){
+    .sponsors{
+        grid-template-areas: "a1" "a2" "a3" "a4" "a5";
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+    }
+
+    #menu{
+        display: block;
+        position: absolute;
+        right: 0;
+        border-bottom-left-radius: 10px;
+        padding: 10px;
+        background-color: rgba(175,64,64,1);
+        -webkit-box-shadow: -7px 8px 20px -9px rgba(0,0,0,0.59); 
+        box-shadow: -7px 8px 20px -9px rgba(0,0,0,0.59);
+    }
+    .header-home a{
+        padding: 20px;
+    }
+
+    .hide{
+        top: -500px;
+        transition: 500ms;
+    }
+    .show{
+        top: 70px;
+        height: fit-content;
+        transition: 500ms;
+    }
+
+
+
+    .sec-main{
+        grid-template-columns: auto;
+        grid-template-areas: "title" "text" "container";
+        justify-items: center;
+        text-align: center;
+    }
+
+    #title-style{
+        margin: auto;
+    }
+
+    #car-container{
+        margin: 0;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+    }
+
+    .material-icons{
+        display: flex;
+        color: rgba(231, 229, 229, 0.753);
+        cursor: pointer;
+        font-size: 30px;
+    }
+    .material-icons:hover{
+        color:rgb(240, 235, 235);
+        transition: 300ms;
+    }
+
 }

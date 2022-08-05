@@ -1,10 +1,16 @@
-var altura = window.screen.height
-var largura = window.screen.width
+var iconMenu = document.querySelectorAll('.material-icons')
 
-var header = document.getElementsByClassName("header-home")
+iconMenu[0].addEventListener('click', ()=>{
+    menu = document.getElementById('menu')
 
-function changeHeader(largura){
-    if(largura<"500px"){
-        console.log("hello")
+    if(menu.classList.contains('hide')){
+        menu.classList.add('show')
+        menu.classList.remove('hide')
     }
-}
+    if(menu.classList.contains('show')){
+        menu.classList.add('hide')
+        menu.classList.remove('show')
+    }
+
+
+})
