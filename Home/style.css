@@ -85,9 +85,31 @@ nav a:hover{
     color:dimgrey;
 }
 
+/* MAIN - QUEM SOMOS */
+
+.quem-somos{
+    display: grid;
+    grid-template-areas: "title title title"
+                         "text text text";
+    padding: 20px;
+}
+
+.quem-somos h2{
+    grid-area: title;
+
+}
+
+
+.quem-somos p{
+    font-family: 'Trap';
+    font-size: 20px;
+    color:dimgrey;
+    grid-area: text;
+}
+
 
 /* Titulo da Main */
-#main-title{
+.main-titles{
     color: rgb(143, 35, 35);
     font-family: 'Trap';
     font-weight: bold;
@@ -142,6 +164,8 @@ nav a:hover{
     margin-top: 2%;
 }
 
+
+
 /* Patrocinadores */
 @keyframes linha{
     from{
@@ -164,7 +188,6 @@ nav a:hover{
 }
 
 .sponsors h2:hover{
-    animation-name: linha;
     animation-duration: 1s;
 }
 
